@@ -1,4 +1,17 @@
 const start = document.getElementById("greeting");
+const button1 = document.getElementById("misc");
+const button2 = document.getElementById("programming");
+const button3 = document.getElementById("spooky");
+const button4 = document.getElementById("christmas");
+const button5 = document.getElementById("pun");
+const lead = document.getElementById("jotd");
+
+
+button1.textContent = "Miscelaneous"
+button2.textContent = "Programming"
+button3.textContent = "Spooky"
+button4.textContent = "Christmas"
+button5.textContent = "Pun"
 
 fetch("https://v2.jokeapi.dev/joke/Any?safe-mode")
 .then(response => response.json())
@@ -16,18 +29,6 @@ fetch("https://v2.jokeapi.dev/joke/Any?safe-mode")
     }
 });
 
-const button1 = document.getElementById("misc")
-const button2 = document.getElementById("programming")
-const button3 = document.getElementById("spooky")
-const button4 = document.getElementById("christmas")
-const button5 = document.getElementById("pun")
-
-button1.textContent = "Miscelaneous"
-button2.textContent = "Programming"
-button3.textContent = "Spooky"
-button4.textContent = "Christmas"
-button5.textContent = "Pun"
-
 button1.addEventListener("click", function(){
 
     fetch("https://v2.jokeapi.dev/joke/misc?safe-mode")
@@ -39,6 +40,9 @@ button1.addEventListener("click", function(){
         } else if (data.type === "single"){
             start.textContent = data.joke
         }
+
+        lead.textContent = "A Random Miscelaneous Joke"
+
 })})
 
 button2.addEventListener("click", function(){
@@ -52,6 +56,9 @@ button2.addEventListener("click", function(){
         } else if (data.type === "single"){
             start.textContent = data.joke
         }
+
+        lead.textContent = "A Random Programming Joke"
+
 })})
 
 button3.addEventListener("click", function(){
@@ -65,6 +72,9 @@ button3.addEventListener("click", function(){
         } else if (data.type === "single"){
             start.textContent = data.joke
         }
+
+        lead.textContent = "A Random Spooky Joke"
+
 })})
 
 button4.addEventListener("click", function(){
@@ -78,6 +88,9 @@ button4.addEventListener("click", function(){
         } else if (data.type === "single"){
             start.textContent = data.joke
         }
+
+        lead.textContent = "A Random Christmas Joke"
+
 })})
 
 button5.addEventListener("click", function(){
@@ -91,4 +104,8 @@ button5.addEventListener("click", function(){
         } else if (data.type === "single"){
             start.textContent = data.joke
         }
+
+        lead.textContent = "A Random Pun"
+
 })})
+
